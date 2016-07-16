@@ -31,6 +31,9 @@ object ColorUtil {
 
     @inline def lerpHSB (b: Color, amount: Float): Color
       = HSB.lerp(c, b, amount)
+
+    @inline def lerpRGB (b: Color, amount: Float): Color
+      = RGB.lerp(c, b, amount)
   }
 
   implicit def color2awtColor(color: Color): awt.Color = color.c
