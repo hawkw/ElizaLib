@@ -1,4 +1,5 @@
-package me.hawkweisman.elizalib.scalaAPIs.graphics
+package me.hawkweisman.elizalib.scalaAPIs
+package graphics
 
 import java.awt
 

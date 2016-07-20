@@ -6,7 +6,7 @@ import com.fs.starfarer.api.combat.ShipAPI
 import scala.language.implicitConversions
 
 /**
-  * Created by hawk on 6/28/16.
+  * Created by Eliza on 6/28/16.
   */
 object ShipUtil {
 

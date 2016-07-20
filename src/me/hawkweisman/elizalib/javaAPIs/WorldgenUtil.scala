@@ -7,7 +7,7 @@ import com.fs.starfarer.api.campaign.econ.MarketAPI
 import java.util
 
 /**
-  * Created by hawk on 7/16/16.
+  * Created by Eliza on 7/16/16.
   */
 object WorldgenUtil {
 

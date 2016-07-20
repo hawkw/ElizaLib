@@ -1,10 +1,11 @@
-package me.hawkweisman.elizalib.scalaAPIs.graphics
+package me.hawkweisman.elizalib.scalaAPIs
+package graphics
 
 import com.fs.starfarer.api.{Global, SpriteId}
 import com.fs.starfarer.api.graphics.SpriteAPI
 
 /**
-  * Created by hawk on 7/20/16.
+  * Created by Eliza on 7/20/16.
   */
 object SpriteUtil {
   implicit def stringTuple2SpriteId(tuple: (String, String)): SpriteId

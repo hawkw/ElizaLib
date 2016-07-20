@@ -1,7 +1,7 @@
 package me.hawkweisman.elizalib;
 
 /**
- * Created by hawk on 6/27/16.
+ * Created by Eliza on 6/27/16.
  */
 public class MathUtil {
 
