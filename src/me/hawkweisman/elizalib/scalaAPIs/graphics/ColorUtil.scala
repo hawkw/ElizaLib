@@ -1,8 +1,8 @@
-package me.hawkweisman.elizalib.scalaAPIs
-
-import scala.language.implicitConversions
+package me.hawkweisman.elizalib.scalaAPIs.graphics
 
 import java.awt
+
+import scala.language.implicitConversions
 /** Scala-idiomatic accessors, mutators, and extractors for [[java.awt.Color]].
   *
   * @author Eliza Weisman

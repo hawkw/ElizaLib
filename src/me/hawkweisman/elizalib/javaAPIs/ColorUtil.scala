@@ -12,7 +12,7 @@ import me.hawkweisman.elizalib.scalaAPIs
   *         Created by Eliza on 6/27/16.
   */
 object ColorUtil {
-  import scalaAPIs.ColorUtil.{HSB, RGB}
+  import me.hawkweisman.elizalib.scalaAPIs.graphics.ColorUtil.{HSB, RGB}
   import scalaAPIs.{LerpFloat, LerpInt}
 
   /**
