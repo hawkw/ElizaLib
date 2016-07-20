@@ -1,11 +1,15 @@
 package me.hawkweisman.elizalib.scalaAPIs
 
-import com.fs.starfarer.api.Global
-import com.fs.starfarer.api.campaign.SectorEntityToken
+import java.awt.Color
+
+import com.fs.starfarer.api.{Global, SpriteId}
+import com.fs.starfarer.api.campaign.{PlanetAPI, PlanetSpecAPI, SectorEntityToken}
 import com.fs.starfarer.api.campaign.econ.MarketAPI
 
+
+
 /**
-  * Created by hawk on 7/16/16.
+  * Created by Eliza on 7/16/16.
   */
 object WorldgenUtil {
 
@@ -48,5 +52,42 @@ object WorldgenUtil {
                               , conditions, submarkets
                               , connectedEntities:_*
                               )
+  }
+
+  implicit class RichPlanet(val planet: PlanetAPI)
+  extends AnyVal {
+    import graphics.SpriteUtil._
+
+    def setSpec( planetColor: Option[Color] = None
+               , atmosphereColor: Option[Color] = None
+               , atmosphereThickness: Option[Float] = None
+               , atmosphereThicknessMin: Option[Float] = None
+               , cloudColor: Option[Color] = None
+               , cloudRotation:  Option[Float] = None
+               , cloudTexture: Option[SpriteId] = None
+               , glowTexture: Option[SpriteId] = None
+               , glowColor: Option[Color] = None
+               , iconColor: Option[Color] = None
+               , reverseLightForGlow: Option[Boolean] = None): Unit = {
+      val spec = planet.getSpec
+
+      planetColor foreach { spec.setPlanetColor }
+
+      atmosphereColor foreach { spec.setAtmosphereColor }
+      atmosphereThickness foreach { spec.setAtmosphereThickness }
+      atmosphereThicknessMin foreach { spec.setAtmosphereThicknessMin }
+
+      cloudColor foreach { spec.setCloudColor }
+      cloudRotation foreach { spec.setCloudRotation }
+      cloudTexture foreach { id => spec.setCloudTexture(id.spriteName) }
+
+      glowColor foreach { spec.setGlowColor }
+      glowTexture foreach { id => spec.setGlowTexture(id.spriteName) }
+      reverseLightForGlow foreach { spec.setUseReverseLightForGlow }
+
+      iconColor foreach { spec.setIconColor }
+
+      planet.applySpecChanges()
+    }
   }
 }
